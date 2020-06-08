@@ -65,11 +65,11 @@ class DatabaseServices {
   Future<List<Mobil>> getMobilList()async{
     Database db = await this.database;
     List<Map<String, dynamic>> mapList =
-    await db.query('mobil', orderBy: 'mobil');
-    int count = mapList.length
+        await db.query('mobil', orderBy: 'mobil');
+    int count = mapList.length;
 
-    List<Mobil>mobilList = List<Mobil>();
-    for(int i = 0; i<count;i++){
+    List<Mobil> mobilList = List<Mobil>();
+    for (int i = 0; i < count; i++) {
       mobilList.add(Mobil.fromMap(mapList[i]));
     }
     return null;
